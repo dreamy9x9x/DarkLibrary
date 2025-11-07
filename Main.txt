@@ -1,5 +1,5 @@
---Minha Versão única - Magnus Modificações 
---Ser tive outro igual, e meu ramake rsrsrs
+-- Minha Versão única - Magnus Modificações 
+-- Ser tive outro igual, e meu ramake rsrsrs
 local MarketplaceService = game:GetService("MarketplaceService")
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -25,7 +25,11 @@ local redzlib = {
 			["Color Dark Text"] = Color3.fromRGB(240, 120, 120),
 			["Color Dark Blue"] = Color3.fromRGB(210, 0, 0),
 			["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
-			["Color Dark Cyan"] = Color3.fromRGB(220, 0, 0)
+			["Color Dark Cyan"] = Color3.fromRGB(220, 0, 0),
+			["CloseIcon"] = "rbxassetid://8355880961",
+			["MinusIcon"] = "rbxassetid://10734896206",
+			["PlusIcon"] = "rbxassetid://10734924532",
+			["ConfigIcon"] = "rbxassetid://10734950309"
 		},
 		Blue = {
 			["Color Hub 1"] = ColorSequence.new({
@@ -40,7 +44,11 @@ local redzlib = {
 			["Color Dark Text"] = Color3.fromRGB(120, 200, 240),
 			["Color Dark Blue"] = Color3.fromRGB(0, 140, 210),
 			["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
-			["Color Dark Cyan"] = Color3.fromRGB(0, 160, 220)
+			["Color Dark Cyan"] = Color3.fromRGB(0, 160, 220),
+			["CloseIcon"] = "rbxassetid://10747384394",
+			["MinusIcon"] = "rbxassetid://10734896206",
+			["PlusIcon"] = "rbxassetid://10734924532",
+			["ConfigIcon"] = "rbxassetid://10734950309"
 		},
 		Purple = {
 			["Color Hub 1"] = ColorSequence.new({
@@ -55,7 +63,11 @@ local redzlib = {
 			["Color Dark Text"] = Color3.fromRGB(200, 120, 240),
 			["Color Dark Blue"] = Color3.fromRGB(140, 0, 210),
 			["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
-			["Color Dark Cyan"] = Color3.fromRGB(160, 0, 220)
+			["Color Dark Cyan"] = Color3.fromRGB(160, 0, 220),
+			["CloseIcon"] = "rbxassetid://7828432757",
+			["MinusIcon"] = "rbxassetid://10734896206",
+			["PlusIcon"] = "rbxassetid://10734924532",
+			["ConfigIcon"] = "rbxassetid://10734950309"
 		},
 		Green = {
 			["Color Hub 1"] = ColorSequence.new({
@@ -70,7 +82,11 @@ local redzlib = {
 			["Color Dark Text"] = Color3.fromRGB(120, 240, 120),
 			["Color Dark Blue"] = Color3.fromRGB(0, 210, 0),
 			["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
-			["Color Dark Cyan"] = Color3.fromRGB(0, 220, 0)
+			["Color Dark Cyan"] = Color3.fromRGB(0, 220, 0),
+			["CloseIcon"] = "rbxassetid://136446636508735",
+			["MinusIcon"] = "rbxassetid://10734896206",
+			["PlusIcon"] = "rbxassetid://10734924532",
+			["ConfigIcon"] = "rbxassetid://10734950309"
 		},
 		Pink = {
 			["Color Hub 1"] = ColorSequence.new({
@@ -85,7 +101,11 @@ local redzlib = {
 			["Color Dark Text"] = Color3.fromRGB(240, 120, 200),
 			["Color Dark Blue"] = Color3.fromRGB(210, 0, 140),
 			["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
-			["Color Dark Cyan"] = Color3.fromRGB(220, 0, 160)
+			["Color Dark Cyan"] = Color3.fromRGB(220, 0, 160),
+			["CloseIcon"] = "rbxassetid://8472853398",
+			["MinusIcon"] = "rbxassetid://10734896206",
+			["PlusIcon"] = "rbxassetid://10734924532",
+			["ConfigIcon"] = "rbxassetid://10734950309"
 		},
 		Yellow = {
 			["Color Hub 1"] = ColorSequence.new({
@@ -100,7 +120,11 @@ local redzlib = {
 			["Color Dark Text"] = Color3.fromRGB(240, 240, 120),
 			["Color Dark Blue"] = Color3.fromRGB(210, 210, 0),
 			["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
-			["Color Dark Cyan"] = Color3.fromRGB(220, 220, 0)
+			["Color Dark Cyan"] = Color3.fromRGB(220, 220, 0),
+			["CloseIcon"] = "rbxassetid://10747384394",
+			["MinusIcon"] = "rbxassetid://10734896206",
+			["PlusIcon"] = "rbxassetid://10734924532",
+			["ConfigIcon"] = "rbxassetid://10734950309"
 		}
 	},
 	Info = {
@@ -1461,6 +1485,21 @@ function redzlib:SetTheme(NewTheme)
 			Val.Instance[GetColor(Val.Instance)] = Theme["Color Theme"]
 		end
 	end)
+	
+	-- Atualizar ícones dos botões
+	if ScreenGui and ScreenGui:FindFirstChild("Hub") then
+		local Hub = ScreenGui.Hub
+		local ButtonsFolder = Hub:FindFirstChild("Components"):FindFirstChild("Top Bar"):FindFirstChild("Buttons")
+		if ButtonsFolder then
+			local CloseButton = ButtonsFolder:FindFirstChild("Close")
+			local MinimizeButton = ButtonsFolder:FindFirstChild("Minimize")
+			local ConfigButton = ButtonsFolder:FindFirstChild("Config")
+			
+			if CloseButton then CloseButton.Image = Theme["CloseIcon"] end
+			if MinimizeButton then MinimizeButton.Image = Theme["MinusIcon"] end
+			if ConfigButton then ConfigButton.Image = Theme["ConfigIcon"] end
+		end
+	end
 end
 
 function redzlib:SetScale(NewScale)
@@ -1873,32 +1912,27 @@ function redzlib:MakeWindow(Configs)
 		Name = "Buttons"
 	})
 	
-	local CloseButton = Create("ImageButton", {
+	-- Criar botões com mais espaçamento
+	local CloseButton = Create("ImageButton", ButtonsFolder, {
 		Size = UDim2.new(0, 14, 0, 14),
 		Position = UDim2.new(1, -10, 0.5),
 		AnchorPoint = Vector2.new(1, 0.5),
 		BackgroundTransparency = 1,
-		Image = "rbxassetid://10747384394",
+		Image = Theme["CloseIcon"],
 		AutoButtonColor = false,
 		Name = "Close"
 	})
-	
+
 	local MinimizeButton = SetProps(CloseButton:Clone(), {
-		Position = UDim2.new(1, -35, 0.5),
-		Image = "rbxassetid://10734896206",
+		Position = UDim2.new(1, -35, 0.5), -- Aumentado de -30 para -35
+		Image = Theme["MinusIcon"],
 		Name = "Minimize"
 	})
 
 	local ConfigButton = SetProps(CloseButton:Clone(), {
-		Position = UDim2.new(1, -60, 0.5),
-		Image = "rbxassetid://10734950309",
+		Position = UDim2.new(1, -60, 0.5), -- Aumentado de -50 para -60
+		Image = Theme["ConfigIcon"],
 		Name = "Config"
-	})
-
-	SetChildren(ButtonsFolder, {
-		CloseButton,
-		MinimizeButton,
-		ConfigButton
 	})
 	
 	local Minimized, SaveSize, WaitClick
@@ -1922,7 +1956,7 @@ function redzlib:MakeWindow(Configs)
 		WaitClick = true
 		
 		if Minimized then
-			MinimizeButton.Image = "rbxassetid://10734896206"
+			MinimizeButton.Image = Theme["MinusIcon"]
 			CreateTween({MainFrame, "Size", SaveSize, 0.25, true})
 			ControlSize1.Visible = true
 			ControlSize2.Visible = true
@@ -1933,7 +1967,7 @@ function redzlib:MakeWindow(Configs)
 			end
 			Minimized = false
 		else
-			MinimizeButton.Image = "rbxassetid://10734924532"
+			MinimizeButton.Image = Theme["PlusIcon"]
 			SaveSize = MainFrame.Size
 			ControlSize1.Visible = false
 			ControlSize2.Visible = false

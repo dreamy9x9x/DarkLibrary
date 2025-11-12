@@ -1,3 +1,5 @@
+--Minha Versão única - Magnus Modificações 
+--Ser tive outro igual, e meu ramake rsrsrs
 local MarketplaceService = game:GetService("MarketplaceService")
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -10,45 +12,45 @@ local PlayerMouse = Player:GetMouse()
 
 local redzlib = {
 	Themes = {
-		Darker = {
-			["Color Hub 1"] = ColorSequence.new({
-				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(10, 10, 10)),
-				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(15, 15, 15)),
-				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(10, 10, 10))
-			}),
-			["Color Hub 2"] = Color3.fromRGB(12, 12, 12),
-			["Color Stroke"] = Color3.fromRGB(40, 40, 40),
-			["Color Theme"] = Color3.fromRGB(255, 255, 255),
-			["Color Text"] = Color3.fromRGB(255, 255, 255),
-			["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
-		},
-		Dark = {
-			["Color Hub 1"] = ColorSequence.new({
-				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(15, 15, 15)),
-				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(20, 20, 20)),
-				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(15, 15, 15))
-			}),
-			["Color Hub 2"] = Color3.fromRGB(18, 18, 18),
-			["Color Stroke"] = Color3.fromRGB(50, 50, 50),
-			["Color Theme"] = Color3.fromRGB(255, 255, 255),
-			["Color Text"] = Color3.fromRGB(255, 255, 255),
-			["Color Dark Text"] = Color3.fromRGB(200, 200, 200)
-		},
-		Blue = {
-			["Color Hub 1"] = ColorSequence.new({
-				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(8, 8, 8)),
-				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(18, 18, 18)),
-				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(8, 8, 8))
-			}),
-			["Color Hub 2"] = Color3.fromRGB(15, 15, 15),
-			["Color Stroke"] = Color3.fromRGB(45, 45, 45),
-			["Color Theme"] = Color3.fromRGB(255, 255, 255),
-			["Color Text"] = Color3.fromRGB(255, 255, 255),
-			["Color Dark Text"] = Color3.fromRGB(190, 190, 190),
-			["Color Dark Blue"] = Color3.fromRGB(220, 220, 220),
-			["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
-			["Color Dark Cyan"] = Color3.fromRGB(200, 200, 200)
-		}
+	Darker = {
+	["Color Hub 1"] = ColorSequence.new({
+		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(5, 5, 5)),
+		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(15, 15, 15)),
+		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(5, 5, 5))
+	}),
+	["Color Hub 2"] = Color3.fromRGB(10, 10, 10),
+	["Color Stroke"] = Color3.fromRGB(35, 35, 35),
+	["Color Theme"] = Color3.fromRGB(255, 255, 255),
+	["Color Text"] = Color3.fromRGB(255, 255, 255),
+	["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
+},
+Dark = {
+	["Color Hub 1"] = ColorSequence.new({
+		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(10, 10, 10)),
+		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(20, 20, 20)),
+		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(10, 10, 10))
+	}),
+	["Color Hub 2"] = Color3.fromRGB(15, 15, 15),
+	["Color Stroke"] = Color3.fromRGB(45, 45, 45),
+	["Color Theme"] = Color3.fromRGB(255, 255, 255),
+	["Color Text"] = Color3.fromRGB(255, 255, 255),
+	["Color Dark Text"] = Color3.fromRGB(200, 200, 200)
+},
+Blue = {
+	["Color Hub 1"] = ColorSequence.new({
+		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(5, 5, 5)),
+		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(20, 20, 20)),
+		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(5, 5, 5))
+	}),
+	["Color Hub 2"] = Color3.fromRGB(15, 15, 15),
+	["Color Stroke"] = Color3.fromRGB(55, 55, 55),
+	["Color Theme"] = Color3.fromRGB(255, 255, 255),
+	["Color Text"] = Color3.fromRGB(255, 255, 255),
+	["Color Dark Text"] = Color3.fromRGB(190, 190, 190),
+	["Color Dark Blue"] = Color3.fromRGB(170, 170, 170),
+	["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
+	["Color Dark Cyan"] = Color3.fromRGB(210, 210, 210)
+}
 	},
 	Info = {
 		Version = "1.2.0"
@@ -1362,6 +1364,7 @@ local function GetColor(Instance)
 	return ""
 end
 
+-- /////////// --
 function redzlib:GetIcon(index)
 	if type(index) ~= "string" or index:find("rbxassetid://") or #index == 0 then
 		return index
@@ -1438,8 +1441,8 @@ function redzlib:Notify(Configs)
 	
 	local Colors = {
 		Info = Color3.fromRGB(255, 255, 255),
-		Success = Color3.fromRGB(200, 200, 200),
-		Warning = Color3.fromRGB(220, 220, 220),
+		Success = Color3.fromRGB(255, 255, 255),
+		Warning = Color3.fromRGB(255, 255, 255),
 		Error = Color3.fromRGB(255, 255, 255)
 	}
 	
@@ -1456,7 +1459,7 @@ function redzlib:Notify(Configs)
 	Make("Corner", NotificationFrame, UDim.new(0, 12))
 	
 	local NotificationStroke = Create("UIStroke", NotificationFrame, {
-		Color = Color3.fromRGB(42, 42, 42),
+		Color = Color3.fromRGB(42, 38, 43),
 		Thickness = 2,
 		ApplyStrokeMode = "Border"
 	})
@@ -1664,11 +1667,11 @@ function redzlib:MakeWindow(Configs)
 	})
 	
 	local ParticleConfig = {
-		MaxParticles = 40,
-		SpawnRate = 0.05,
-		ParticleSize = {Min = 4, Max = 8},
-		ParticleSpeed = {Min = 10, Max = 18},
-		ParticleLifetime = 5
+		MaxParticles = 60,
+		SpawnRate = 0.03,
+		ParticleSize = {Min = 6, Max = 12},
+		ParticleSpeed = {Min = 20, Max = 35},
+		ParticleLifetime = 3
 	}
 
 	local ActiveParticles = {}
@@ -1684,13 +1687,13 @@ function redzlib:MakeWindow(Configs)
 		local size = math.random(ParticleConfig.ParticleSize.Min, ParticleConfig.ParticleSize.Max)
 		local speed = math.random(ParticleConfig.ParticleSpeed.Min, ParticleConfig.ParticleSpeed.Max)
 		
-		local particleColor = Theme["Color Theme"]
+		local particleColor = Color3.fromRGB(255, 255, 255)
 		
 		local Particle = Create("Frame", ParticleContainer, {
 			Size = UDim2.fromOffset(size, size),
 			Position = UDim2.fromOffset(startX, startY),
 			BackgroundColor3 = particleColor,
-			BackgroundTransparency = 0.2,
+			BackgroundTransparency = 0.05,
 			BorderSizePixel = 0
 		})
 		
@@ -1699,11 +1702,11 @@ function redzlib:MakeWindow(Configs)
 		})
 		
 		local Glow = Create("Frame", Particle, {
-			Size = UDim2.new(1, 6, 1, 6),
+			Size = UDim2.new(1, 12, 1, 12),
 			Position = UDim2.new(0.5, 0, 0.5, 0),
 			AnchorPoint = Vector2.new(0.5, 0.5),
 			BackgroundColor3 = particleColor,
-			BackgroundTransparency = 0.7,
+			BackgroundTransparency = 0.4,
 			ZIndex = -1
 		})
 		
@@ -1722,8 +1725,8 @@ function redzlib:MakeWindow(Configs)
 		
 		Particle.BackgroundTransparency = 1
 		Glow.BackgroundTransparency = 1
-		CreateTween({Particle, "BackgroundTransparency", 0.2, 0.8})
-		CreateTween({Glow, "BackgroundTransparency", 0.7, 0.8})
+		CreateTween({Particle, "BackgroundTransparency", 0.05, 0.3})
+		CreateTween({Glow, "BackgroundTransparency", 0.4, 0.3})
 		
 		table.insert(ActiveParticles, ParticleData)
 	end
@@ -1737,11 +1740,11 @@ function redzlib:MakeWindow(Configs)
 			if elapsed >= ParticleConfig.ParticleLifetime or 
 			   particle.Frame.Position.Y.Offset < -20 then
 
-				CreateTween({particle.Frame, "BackgroundTransparency", 1, 0.5})
-				CreateTween({particle.Glow, "BackgroundTransparency", 1, 0.5})
+				CreateTween({particle.Frame, "BackgroundTransparency", 1, 0.2})
+				CreateTween({particle.Glow, "BackgroundTransparency", 1, 0.2})
 				
 				task.spawn(function()
-					task.wait(0.5)
+					task.wait(0.2)
 					if particle.Frame and particle.Frame.Parent then
 						particle.Frame:Destroy()
 					end
@@ -1754,8 +1757,8 @@ function redzlib:MakeWindow(Configs)
 				
 				particle.Frame.Position = UDim2.fromOffset(currentPos.X.Offset, newY)
 				local lifeRatio = elapsed / ParticleConfig.ParticleLifetime
-				if lifeRatio > 0.8 then
-					local fadeAlpha = 0.2 * (1 - ((lifeRatio - 0.8) / 0.2))
+				if lifeRatio > 0.6 then
+					local fadeAlpha = 0.05 * (1 - ((lifeRatio - 0.6) / 0.4))
 					particle.Frame.BackgroundTransparency = math.max(1 - fadeAlpha, 0.95)
 				end
 			end
@@ -1908,6 +1911,10 @@ function redzlib:MakeWindow(Configs)
 			end
 			ParticleContainer.Visible = false
 		end
+	end
+
+	function Window:Minimize()
+		MainFrame.Visible = not MainFrame.Visible
 	end
 
 	function Window:AddMinimizeButton(Configs)
@@ -2356,6 +2363,8 @@ function redzlib:MakeWindow(Configs)
 					Callback = Val1
 				end
 			end
+			return Toggle
+		end
 		
 		function Tab:AddDropdown(Configs)
 			local DName = Configs[1] or Configs.Name or Configs.Title or "Dropdown"
@@ -2699,6 +2708,8 @@ function redzlib:MakeWindow(Configs)
 					Callback = Val1
 				end
 			end
+			return Dropdown
+		end
 		
 		function Tab:AddSlider(Configs)
 			local SName = Configs[1] or Configs.Name or Configs.Title or "Slider!"
@@ -3029,11 +3040,11 @@ function redzlib:MakeWindow(Configs)
 				end
 				
 				if MembersOnline > 0 then
-					CreateStatusIndicator(Color3.fromRGB(200, 200, 200), MembersOnline .. " Online")
+					CreateStatusIndicator(Color3.fromRGB(255, 255, 255), MembersOnline .. " Online")
 				end
 				
 				if TotalMembers > 0 then
-					CreateStatusIndicator(Color3.fromRGB(150, 150, 150), TotalMembers .. " Members")
+					CreateStatusIndicator(Color3.fromRGB(200, 200, 200), TotalMembers .. " Members")
 				end
 			end
 			

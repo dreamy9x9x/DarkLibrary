@@ -12,45 +12,60 @@ local PlayerMouse = Player:GetMouse()
 
 local redzlib = {
 	Themes = {
-	Darker = {
-	["Color Hub 1"] = ColorSequence.new({
-		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(5, 5, 5)),
-		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(15, 15, 15)),
-		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(5, 5, 5))
-	}),
-	["Color Hub 2"] = Color3.fromRGB(10, 10, 10),
-	["Color Stroke"] = Color3.fromRGB(35, 35, 35),
-	["Color Theme"] = Color3.fromRGB(255, 255, 255),
-	["Color Text"] = Color3.fromRGB(255, 255, 255),
-	["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
-},
-Dark = {
-	["Color Hub 1"] = ColorSequence.new({
-		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(10, 10, 10)),
-		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(20, 20, 20)),
-		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(10, 10, 10))
-	}),
-	["Color Hub 2"] = Color3.fromRGB(15, 15, 15),
-	["Color Stroke"] = Color3.fromRGB(45, 45, 45),
-	["Color Theme"] = Color3.fromRGB(255, 255, 255),
-	["Color Text"] = Color3.fromRGB(255, 255, 255),
-	["Color Dark Text"] = Color3.fromRGB(200, 200, 200)
-},
-Blue = {
-	["Color Hub 1"] = ColorSequence.new({
-		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(5, 5, 5)),
-		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(20, 20, 20)),
-		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(5, 5, 5))
-	}),
-	["Color Hub 2"] = Color3.fromRGB(15, 15, 15),
-	["Color Stroke"] = Color3.fromRGB(55, 55, 55),
-	["Color Theme"] = Color3.fromRGB(255, 255, 255),
-	["Color Text"] = Color3.fromRGB(255, 255, 255),
-	["Color Dark Text"] = Color3.fromRGB(190, 190, 190),
-	["Color Dark Blue"] = Color3.fromRGB(170, 170, 170),
-	["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
-	["Color Dark Cyan"] = Color3.fromRGB(210, 210, 210)
-}
+		WhiteRed = {
+			["Color Hub 1"] = ColorSequence.new({
+				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(250, 250, 250)),
+				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(240, 240, 240)),
+				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(250, 250, 250))
+			}),
+			["Color Hub 2"] = Color3.fromRGB(245, 245, 245),
+			["Color Stroke"] = Color3.fromRGB(220, 220, 220),
+			["Color Theme"] = Color3.fromRGB(200, 0, 0), -- Vermelho escuro forte
+			["Color Text"] = Color3.fromRGB(150, 0, 0), -- Vermelho escuro
+			["Color Dark Text"] = Color3.fromRGB(120, 0, 0), -- Vermelho mais escuro
+			["Color Dark Blue"] = Color3.fromRGB(100, 0, 0), -- Vermelho escuro para seções
+			["Color Hub 9"] = Color3.fromRGB(255, 255, 255),
+			["Color Dark Cyan"] = Color3.fromRGB(80, 0, 0) -- Vermelho muito escuro
+		},
+		Darker = {
+			["Color Hub 1"] = ColorSequence.new({
+				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(5, 5, 5)),
+				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(15, 15, 15)),
+				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(5, 5, 5))
+			}),
+			["Color Hub 2"] = Color3.fromRGB(10, 10, 10),
+			["Color Stroke"] = Color3.fromRGB(35, 35, 35),
+			["Color Theme"] = Color3.fromRGB(255, 255, 255),
+			["Color Text"] = Color3.fromRGB(255, 255, 255),
+			["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
+		},
+		Dark = {
+			["Color Hub 1"] = ColorSequence.new({
+				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(10, 10, 10)),
+				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(20, 20, 20)),
+				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(10, 10, 10))
+			}),
+			["Color Hub 2"] = Color3.fromRGB(15, 15, 15),
+			["Color Stroke"] = Color3.fromRGB(45, 45, 45),
+			["Color Theme"] = Color3.fromRGB(255, 255, 255),
+			["Color Text"] = Color3.fromRGB(255, 255, 255),
+			["Color Dark Text"] = Color3.fromRGB(200, 200, 200)
+		},
+		Blue = {
+			["Color Hub 1"] = ColorSequence.new({
+				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(5, 5, 5)),
+				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(20, 20, 20)),
+				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(5, 5, 5))
+			}),
+			["Color Hub 2"] = Color3.fromRGB(15, 15, 15),
+			["Color Stroke"] = Color3.fromRGB(55, 55, 55),
+			["Color Theme"] = Color3.fromRGB(255, 255, 255),
+			["Color Text"] = Color3.fromRGB(255, 255, 255),
+			["Color Dark Text"] = Color3.fromRGB(190, 190, 190),
+			["Color Dark Blue"] = Color3.fromRGB(170, 170, 170),
+			["Color Hub 9"] = Color3.fromRGB(0, 0, 0),
+			["Color Dark Cyan"] = Color3.fromRGB(210, 210, 210)
+		}
 	},
 	Info = {
 		Version = "1.2.0"
@@ -58,7 +73,7 @@ Blue = {
 	Save = {
 		UISize = {550, 380},
 		TabSize = 160,
-		Theme = "Blue"
+		Theme = "WhiteRed" -- Tema padrão alterado para WhiteRed
 	},
 	Settings = {},
 	Connection = {},
@@ -1687,7 +1702,7 @@ function redzlib:MakeWindow(Configs)
 		local size = math.random(ParticleConfig.ParticleSize.Min, ParticleConfig.ParticleSize.Max)
 		local speed = math.random(ParticleConfig.ParticleSpeed.Min, ParticleConfig.ParticleSpeed.Max)
 		
-		local particleColor = Color3.fromRGB(255, 255, 255)
+		local particleColor = Color3.fromRGB(255, 0, 0) -- Vermelho para partículas
 		
 		local Particle = Create("Frame", ParticleContainer, {
 			Size = UDim2.fromOffset(size, size),

@@ -14,12 +14,12 @@ local redzlib = {
 	Themes = {
 		WhiteRed = {
 			["Color Hub 1"] = ColorSequence.new({
-				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(250, 250, 250)),
-				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(240, 240, 240)),
-				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(250, 250, 250))
-			}),
-			["Color Hub 2"] = Color3.fromRGB(245, 245, 245),
-			["Color Stroke"] = Color3.fromRGB(220, 220, 220),
+    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))
+}),
+["Color Hub 2"] = Color3.fromRGB(255, 255, 255),
+["Color Stroke"] = Color3.fromRGB(255, 255, 255),
 			["Color Theme"] = Color3.fromRGB(200, 0, 0), -- Vermelho escuro forte
 			["Color Text"] = Color3.fromRGB(150, 0, 0), -- Vermelho escuro
 			["Color Dark Text"] = Color3.fromRGB(120, 0, 0), -- Vermelho mais escuro

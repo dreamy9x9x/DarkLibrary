@@ -36,15 +36,15 @@ Dark = {
 	["Color Text"] = Color3.fromRGB(255, 255, 255),
 	["Color Dark Text"] = Color3.fromRGB(255, 255, 255)
 },
-Blue = {
+Purple = {
 	["Color Hub 1"] = ColorSequence.new({
-		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)),
+		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 2, 156)),
 		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 0)),
-		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))
+		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(53, 2, 156))
 	}),
 	["Color Hub 2"] = Color3.fromRGB(0, 0, 0),
 	["Color Stroke"] = Color3.fromRGB(0, 0, 0),
-	["Color Theme"] = Color3.fromRGB(255, 255, 255),
+	["Color Theme"] = Color3.fromRGB(43, 1, 146),
 	["Color Text"] = Color3.fromRGB(255, 255, 255),
 	["Color Dark Text"] = Color3.fromRGB(255, 255, 255),
 	["Color Dark Blue"] = Color3.fromRGB(255, 255, 255),
@@ -58,7 +58,7 @@ Blue = {
 	Save = {
 		UISize = {550, 380},
 		TabSize = 160,
-		Theme = "Blue"
+		Theme = "Darker"
 	},
 	Settings = {},
 	Connection = {},

@@ -99,3 +99,4 @@ local Players = game:GetService("Players")
 			end)
 		end)
 	end
+startAutoCollect()

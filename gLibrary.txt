@@ -29,10 +29,10 @@ Green = {
 		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 230, 0)),
 		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 205, 0))
 	}),
-	["Color Hub 2"] = Color3.fromRGB(172, 250, 200),
+	["Color Hub 2"] = Color3.fromRGB(56, 174, 56),
 	["Color Stroke"] = Color3.fromRGB(40, 40, 40),
 	["Color Theme"] = Color3.fromRGB(172, 250, 200),
-	["Color Text"] = Color3.fromRGB(255, 255, 255),
+	["Color Text"] = Color3.fromRGB(56, 174, 56),
 	["Color Dark Text"] = Color3.fromRGB(255, 255, 255)
 },
 Purple = {

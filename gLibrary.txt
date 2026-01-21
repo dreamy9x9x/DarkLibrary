@@ -31,7 +31,7 @@ Green = {
 	}),
 	["Color Hub 2"] = Color3.fromRGB(50, 255, 50),
 	["Color Stroke"] = Color3.fromRGB(40, 40, 40),
-	["Color Theme"] = Color3.fromRGB(50, 255, 50),
+	["Color Theme"] = Color3.fromRGB(172, 250, 200),
 	["Color Text"] = Color3.fromRGB(255, 255, 255),
 	["Color Dark Text"] = Color3.fromRGB(255, 255, 255)
 },

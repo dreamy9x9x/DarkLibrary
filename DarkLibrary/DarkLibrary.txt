@@ -20,7 +20,7 @@ local redzlib = {
 	["Color Hub 2"] = Color3.fromRGB(0, 0, 0),
 	["Color Stroke"] = Color3.fromRGB(0, 0, 0),
 	["Color Theme"] = Color3.fromRGB(255, 255, 255),
-	["Color Text"] = Color3.fromRGB(255, 255, 255),
+	["Color Text"] = Color3.fromRGB(255, 0, 0),
 	["Color Dark Text"] = Color3.fromRGB(255, 255, 255)
 },
 Dark = {
@@ -57,7 +57,7 @@ Purple = {
 	Save = {
 		UISize = {550, 380},
 		TabSize = 160,
-		Theme = "Purple"
+		Theme = "Darker"
 	},
 	Settings = {},
 	Connection = {},
@@ -1604,7 +1604,7 @@ function redzlib:MakeWindow(Configs)
 		TextSize = 12,
 		TextColor3 = Theme["Color Text"],
 		BackgroundTransparency = 1,
-		Font = Enum.Font.FredokaOne,
+		Font = Enum.Font.GothamBold,
 		Name = "Title"
 	}, {
 		InsertTheme(Create("TextLabel", {

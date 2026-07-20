@@ -1604,7 +1604,7 @@ function redzlib:MakeWindow(Configs)
 		TextSize = 12,
 		TextColor3 = Theme["Color Text"],
 		BackgroundTransparency = 1,
-		Font = Enum.Font.BuilderBold,
+		Font = Enum.Font.BuilderSansBold,
 		Name = "Title"
 	}, {
 		InsertTheme(Create("TextLabel", {

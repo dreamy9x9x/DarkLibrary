@@ -1846,14 +1846,14 @@ function redzlib:MakeWindow(Configs)
 	
 	function Window:CloseBtn()
 		local Dialog = Window:Dialog({
-			Title = "Destroy",
-			Text = "Do you wanna destroy Nytherune Hub? ",
+			Title = "Leave Dragon AutoFarm",
+			Text = "The script will close.",
 			Options = {
 				{"Confirm", function()
 					ScreenGui:Destroy()
 				end},
 
-               {"go back", function()
+               {"Go Back", function()
                end}
 			}
 		})

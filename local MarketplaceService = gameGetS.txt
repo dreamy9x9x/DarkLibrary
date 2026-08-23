@@ -16,9 +16,9 @@ local redzlib = {
 				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 0)),
 				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))
 			}),
-			["Color Hub 2"] = Color3.fromRGB(0, 0, 0),
+			["Color Hub 2"] = Color3.fromRGB(251, 128, 224),
 			["Color Stroke"] = Color3.fromRGB(0, 0, 0),
-			["Color Theme"] = Color3.fromRGB(0, 0, 0),
+			["Color Theme"] = Color3.fromRGB(251, 128, 224),
 			["Color Text"] = Color3.fromRGB(255, 0, 0),
 			["Color Dark Text"] = Color3.fromRGB(255, 0, 0)
 		},
@@ -1456,9 +1456,9 @@ function redzlib:MakeWindow(Configs)
         Size = UDim2.new(1, 0, 1, 0),
         Position = UDim2.new(0, 0, 0, 0),
         BackgroundTransparency = 0,
-        Image = "rbxassetid://99591630943154", 
+        Image = "rbxassetid://70682592736541", 
         ImageTransparency = 0,
-        ScaleType = Enum.ScaleType.Crop,
+        ScaleType = Enum.ScaleType.Stretch,
         ZIndex = 0
     })
     Make("Corner", WindowBackground)

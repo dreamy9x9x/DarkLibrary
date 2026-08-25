@@ -1452,15 +1452,34 @@ function redzlib:MakeWindow(Configs)
     }), "Main")
 
     local WindowBackground = Create("ImageLabel", MainFrame, {
-        Name = "WindowBackground",
-        Size = UDim2.new(1, 0, 1, 0),
-        Position = UDim2.new(0, 0, 0, 0),
-        BackgroundTransparency = 0,
-        Image = "rbxassetid://70682592736541", 
-        ImageTransparency = 0,
-        ScaleType = Enum.ScaleType.Stretch,
-        ZIndex = 0
-    })
+    Name = "WindowBackground",
+    Size = UDim2.new(1, 0, 1, 0),
+    Position = UDim2.new(0, 0, 0, 0),
+    BackgroundTransparency = 0,
+    Image = getgenv().Background or "rbxassetid://70682592736541",
+    ImageTransparency = 0,
+    ScaleType = Enum.ScaleType.Stretch,
+    ZIndex = 0
+})
+
+task.spawn(function()
+    local LastBackground = getgenv().Background
+
+    while WindowBackground and WindowBackground.Parent do
+        task.wait(1)
+
+        local CurrentBackground = getgenv().Background
+
+        if CurrentBackground ~= LastBackground then
+            LastBackground = CurrentBackground
+
+            if CurrentBackground then
+                WindowBackground.Image = CurrentBackground
+            end
+        end
+    end
+end)
+
     Make("Corner", WindowBackground)
 
     Make("Gradient", MainFrame, {
